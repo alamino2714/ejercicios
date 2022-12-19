@@ -1,30 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META http-equiv="Content-Script-Type" content="type">
+  <title>Document</title>
 </head>
+
 <body>
-  
-    <form id="form1">
-        <input type="number" id="number1">
-        <button id="btn1" onclick="f1()" >calcular</button>
-        <output id="txt1"></output>
-    </form>
-      
-     <script>
-         function f1(){
-       docu.getElementById("txt1")="usuario"+document.getElementById("numnber1") ;
-               }
-                
-    </script>  
+
+  <H1 id="hh1"> Calculo 1 </H1>
+  <div id="idiv">
+
+    <tr id="tr1">
+
+    </tr>
+    <script>
+      var i = 3;
 
 
+      var miDiv = document.getElementById("idiv");
+      const filas = document.createElement("tr"); // <div></div>
+      filas.id = "idFila";
+      miDiv.appendChild(filas);
 
- 
+      while (i > 0) {
+
+        var t = 0;
+
+        const tb = document.createElement("td");
+        tb.id = "tb" + i.toString();
+
+        filas.appendChild(tb);
+        while (t < 20) {
 
 
+          const hx = document.createElement("h1");
+          hx.id = "hh" + i.toString() + t.toString();
+
+          if (i == 1) {
+
+            if (t == 0) {
+              hx.innerText = "MULTIPLICA";
+            } else {
+              hx.innerText = "" + t.toString() + ")--->" + Math.round(Math.random() * 10) + " * " + Math.round(Math.random() * 10) + "     ";
+            }
+
+          } else if (i == 2) {
+
+
+            if (t == 0) {
+              hx.innerText = "SUMA";
+            } else {
+              hx.innerText = "" + t.toString() + ")--->" + Math.round(Math.random() * 50) + " + " + Math.round(Math.random() * 50) + "     ";
+            }
+
+
+          }
+          else if (i == 3) {
+          
+            if (t == 0) {
+              hx.innerText = "RESTA";
+            } else {
+              hx.innerText = "" + t.toString() + ")--->" + Math.round(Math.random() * 100) + " - " + Math.round(Math.random() * 100) + "     ";
+            }
+
+
+          }
+
+          tb.appendChild(hx);
+          t++;
+
+        }
+
+
+        i--;
+
+      }
+
+    </script>
+  </div>
 </body>
+
 </html>
