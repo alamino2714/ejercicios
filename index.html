@@ -60,11 +60,18 @@
 
           }
           else if (i == 3) {
-          
+
             if (t == 0) {
               hx.innerText = "RESTA";
             } else {
-              hx.innerText = "" + t.toString() + ")--->" + Math.round(Math.random() * 100) + " - " + Math.round(Math.random() * 100) + "     ";
+              var r1 = Math.round(Math.random() * 100);
+              var r2 = Math.round(Math.random() * 100);
+              if (r1 > r2) {
+                hx.innerText = "" + t.toString() + ")--->" + r1 + " - " + r2 + "     ";
+              } else {
+                hx.innerText = "" + t.toString() + ")--->" + r2 + " - " + r1 + "     ";
+              }
+
             }
 
 
