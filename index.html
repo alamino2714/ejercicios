@@ -81,8 +81,15 @@
 
             if (t == 0) {
               hx.innerText = "DIVIDE";
-            } else {
-              var d1 = Math.round(Math.random() * 10)==0? Math.round(Math.random() * 10): Math.round(Math.random() * 10);
+            }
+             else {
+
+              var d1 = Math.round(Math.random() * 10);
+              while(d1==0)
+              {
+                d1 = Math.round(Math.random() * 10);
+              }
+
               var d2 = Math.round(Math.random() * 10);
               var d12 = d1 * d2;
              
