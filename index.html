@@ -2,119 +2,79 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <META http-equiv="Content-Script-Type" content="type">
-  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ejercicios</title>
+  <link rel="stylesheet" href="ccs/estilo.css">
+  <script src="js/metodos.js"></script>
 </head>
-
 <body>
+<header id="id-index">
+  <h1 style="position: relative;">Matematicas!!</h1>
+  <a href="https://www.linkedin.com/in/yuniel-alamino-placeres-0bbb92171/"> Mi Perfil </a>
+  <br>
+  
 
-  <H1 id="hh1"> Calculo 1 </H1>
-  <div id="idiv">
+</header>
 
-    <tr id="tr1">
+      <ul>
+        <li> Ejercicio 1 </li>
+        <li> Ejercicio 2
+                 <ul>
+                    <li> <a href="aux.html"> 2.1 Varios</a></li>
+                    <li> <a href="/view/suma.html"> 2.2 Suma</a></li>
+                    <li> 2.3 Resta </li>
+                    <li> 2.4 Division </li>
+                    <li> 2.5 Multiplicacion </li>
+                    <li> <a href="index.html#id_p1"> 2.6 Parrafo 3</a></li>
+                </ul>
+        </li>
+       </ul>
 
-    </tr>
-    <script>
-      var i = 4;
+       <h1> Parrafo1 </h1>
+       <p> Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. 
+       </p>
 
-
-      var miDiv = document.getElementById("idiv");
-      const filas = document.createElement("tr"); // <div></div>
-      filas.id = "idFila";
-      miDiv.appendChild(filas);
-
-      while (i > 0) {
-
-        var t = 0;
-
-        const tb = document.createElement("td");
-        tb.id = "tb" + i.toString();
-
-        filas.appendChild(tb);
-        while (t < 20) {
-
-
-          const hx = document.createElement("h2");
-          hx.id = "hh" + i.toString() + t.toString();
-
-          if (i == 1) {
-
-            if (t == 0) {
-              hx.innerText = "MULTIPLICA";
-            } else {
-              hx.innerText = "" + t.toString() + ")--->" + Math.round(Math.random() * 10) + " * " + Math.round(Math.random() * 10) + "     ";
-            }
-
-          } else if (i == 2) {
-
-
-            if (t == 0) {
-              hx.innerText = "SUMA";
-            } else {
-              hx.innerText = "" + t.toString() + ")--->" + Math.round(Math.random() * 50) + " + " + Math.round(Math.random() * 50) + "     ";
-            }
-
-
-          }
-          else if (i == 3) {
-
-            if (t == 0) {
-              hx.innerText = "RESTA";
-            } else {
-              var r1 = Math.round(Math.random() * 100);
-              var r2 = Math.round(Math.random() * 100);
-              if (r1 > r2) {
-                hx.innerText = "" + t.toString() + ")--->" + r1 + " - " + r2 + "     ";
-              } else {
-                hx.innerText = "" + t.toString() + ")--->" + r2 + " - " + r1 + "     ";
-              }
-
-            }
-
-
-          }
-
-          else if (i == 4) {
-
-            if (t == 0) {
-              hx.innerText = "DIVIDE";
-            }
-             else {
-
-              var d1 = Math.round(Math.random() * 10);
-              while(d1==0)
-              {
-                d1 = Math.round(Math.random() * 10);
-              }
-
-              var d2 = Math.round(Math.random() * 10);
-              var d12 = d1 * d2;
-             
-                hx.innerText = "" + t.toString() + ")--->" + d12 + " / " + d1 + "     ";
-              
-
-            }
-
-
-          }
+       <h1> Parrafo2 </h1>
+       <p> Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. 
+       </p>
+       <h1 id="id_p1"> Parrafo3 </h1>
+       <p> Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. Parrafo1. 
+        Parrafo1. 
+       </p>
 
 
 
-          tb.appendChild(hx);
-          t++;
 
-        }
+       <form>
+           <input id='btnx' >
+           <input id='btny' >
+           <input id='btnxy'>
+           <button type='submit' id='validate'  onclick="Persona()">Validate!</button>
+       </form>
+       
+       <button type='submit' id='geraBasicos'  onclick="GenerarBasicos()">Validate!</button>
+       <div id="idiv">
+
+       </div>
+
+      
 
 
-        i--;
 
-      }
 
-    </script>
-  </div>
 </body>
 
 </html>
