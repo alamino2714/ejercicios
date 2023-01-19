@@ -15,80 +15,136 @@ function metodo(c) {
 }
 
 
-function Sumar() {
-  var s1 = document.getElementById("id-section-suma1");
-  var s2 = document.getElementById("id-section-suma2");
-  var s3 = document.getElementById("id-section-suma3");
-
-  if (s2.style.display == "none") {
-    s2.style.display = "block";
-    s3.style.display = "block";
-    XY("id-inputX1", "id-inputY1","id-inputXY1");
-
-  }
-
-}
-
-function XY(idx, idy, idxy) {
-
-  var x1 = document.getElementById(idx);
-  x1.value = X();
-  var y1 = document.getElementById(idy);
-  y1.value = Y();
-  var xy1 = document.getElementById(idxy);
-  xy1.value= "";
-  alert(xy1.value);
+function Calcula(operacion) { 
+   
+    var x1 = document.getElementById("id-inputX1");
+    var op1 = document.getElementById("id-inputOP1");
+    var y1 = document.getElementById("id-inputY1");
+    var xy1 = document.getElementById("id-inputXY1");
+    
+    AsignarValor(x1, op1, y1, xy1, operacion);       
   
+}
 
+function AsignarValor(idx, idOp, idy, idxy, operacion) {
+  if(operacion=="suma")
+  {
+    idOp.value="+";
+  }
+  if(operacion=="resta")
+  {
+    idOp.value="-";
+  }
+  if(operacion=="multiplica")
+  {
+    idOp.value="*";
+  }
+  if(operacion=="divide")
+  {
+    idOp.value="/";
+  }
+  
+   idx.value = X();   
+   idy.value =Y();
+   idxy.value = "";
+   
 }
 
 
-//listValor= new FileList();
-
-function Adicionar() {
+function NuevoCalculo() {
 
   var x1 = document.getElementById("id-inputX1");
+  var op1 = document.getElementById("id-inputOP1");
   var y1 = document.getElementById("id-inputY1");
-  var xy1 = document.getElementById("id-inputXY1");
-
-
-  if (x1.value * y1.value == xy1.value) {    
-    AdicionarCampos(true, x1, y1, xy1); 
-    alert("1");
-    XY("id-inputX1", "id-inputY1","id-inputXY1");
-
+  var xy1 = document.getElementById("id-inputXY1"); 
+  
+ 
+  if(op1.value =='+')
+  {   
+    if (parseInt(x1.value) + parseInt(y1.value) == parseInt(xy1.value)) 
+    {         
+      AdicionarCampos(true, x1, op1, y1, xy1);            
+      AsignarValor(x1, op1, y1, xy1, op1.value);     
+    }
+    else
+    {    
+      AdicionarCampos(false, x1, op1, y1, xy1);    
+      AsignarValor(x1, op1, y1, xy1, op1.value);   
+    }  
   }
-  else {    
-    AdicionarCampos(false, x1, y1, xy1);    
-    XY("id-inputX1", "id-inputY1","id-inputXY1");
+
+  if(op1.value =='*')
+  {   
+    if (parseInt(x1.value) * parseInt(y1.value) == parseInt(xy1.value)) 
+    {         
+      AdicionarCampos(true, x1, op1, y1, xy1);            
+      AsignarValor(x1, op1, y1, xy1, op1.value);     
+    }
+    else
+    {    
+      AdicionarCampos(false, x1, op1, y1, xy1);    
+      AsignarValor(x1, op1, y1, xy1, op1.value);   
+    }  
   }
 
+  if(op1.value =='-')
+  {   
+    if (parseInt(x1.value) - parseInt(y1.value) == parseInt(xy1.value)) 
+    {         
+      AdicionarCampos(true, x1, op1, y1, xy1);            
+      AsignarValor(x1, op1, y1, xy1, op1.value);     
+    }
+    else
+    {    
+      AdicionarCampos(false, x1, op1, y1, xy1);    
+      AsignarValor(x1, op1, y1, xy1, op1.value);   
+    }  
+  }
 
-
+  if(op1.value =='/')
+  {   
+    if (parseInt(x1.value) / parseInt(y1.value) == parseInt(xy1.value)) 
+    {         
+      AdicionarCampos(true, x1, op1, y1, xy1);            
+      AsignarValor(x1, op1, y1, xy1, op1.value);     
+    }
+    else
+    {    
+      AdicionarCampos(false, x1, op1, y1, xy1);    
+      AsignarValor(x1, op1, y1, xy1, op1.value);   
+    }  
+  }
 
 }
 
-function AdicionarCampos(listo, x1p, y1p, xy1p) {
+function AdicionarCampos(listo, x1p, op1p, y1p, xy1p) {
 
   var idSection = document.getElementById("id-section-suma2-1").parentNode;
   var iddivI = document.getElementById("id-section-suma2-1");
 
   var iddiv = document.createElement("div");
   var inputTextX = document.createElement("input");
+  var inputTextOP = document.createElement("input");
   var inputTextY = document.createElement("input");
   var inputTextXY = document.createElement("input");
 
   inputTextX.type = "text";
+  inputTextOP.type = "text";
   inputTextY.type = "text";
   inputTextXY.type = "text";
+  
 
   inputTextY.className = "id-calculos";
   inputTextX.className = "id-calculos";
+  inputTextOP.className = "id-calculador";
+
   inputTextX.value = x1p.value;
+  inputTextOP.value = op1p.value;
   inputTextY.value = y1p.value;
   inputTextXY.value = xy1p.value;
 
   inputTextX.readOnly = true;
+  inputTextOP.readOnly = true;
   inputTextY.readOnly = true;
   inputTextXY.readOnly = true;
 
@@ -96,11 +152,12 @@ function AdicionarCampos(listo, x1p, y1p, xy1p) {
     inputTextXY.style.backgroundColor = "green";
   }
   else {
-    inputTextXY.style.backgroundColor = "red";
+     inputTextXY.style.backgroundColor = "red";
   }
 
   idSection.insertBefore(iddiv, iddivI);
   iddiv.appendChild(inputTextX);
+  iddiv.appendChild(inputTextOP);
   iddiv.appendChild(inputTextY);
   iddiv.appendChild(inputTextXY);
 }

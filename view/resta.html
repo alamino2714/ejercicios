@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ejercicios</title>
+  <link rel="stylesheet" href="../ccs/estilo.css">
+  <script src="../js/metodos.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1> Matematicas</h1>
+    <h2> Resta</h2>
+    <nav id="id-menu-principal">
+        <ul>
+            <li>
+                <a href="../index.html"> Inicio</a>
+            </li>
+            <li>
+                <a href="suma.html"> Suma</a>
+            </li>
+            <li>
+                <a href="resta.html"> Resta</a>
+            </li>
+            <li>
+                <a href="multiplicacion.html"> Multiplica</a>
+            </li>
+            <li>
+                <a href="divide.html"> Divide</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section class="id-section-inicio">
+
+</section>
+
+
+<section class="id-class-segundos" id="id-section-suma2" onload="alert()">
+
+    <input type="submit" id="id-input" class="id-calcular" value="Comienza" onclick="Calcula('resta')" />
+
+    <div id="id-section-suma2-1">
+        <input type="text" id="id-inputX1" class="id-calculos"  readonly />
+        <input type="text" id="id-inputOP1" class="id-calculador" readonly>        
+        <input type="text" id="id-inputY1" class="id-calculos"  readonly />
+        <input type="text" id="id-inputXY1" class="id-resultados"  />            
+    </div>    
+</section>
+
+<section class="id-class-segundos" id="id-section-suma3">
+    <input type="submit" id="id-inputAd1" class="id-calcular" value="Adicionar" onclick="NuevoCalculo()" />
+    <input type="submit" id="id-inputAd2" class="id-calcular" value="Listo" onclick="Comprobar()" />
+</section>
+
+</body>
+</html>
