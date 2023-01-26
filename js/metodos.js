@@ -27,25 +27,40 @@ function Calcula(operacion) {
 }
 
 function AsignarValor(idx, idOp, idy, idxy, operacion) {
+ 
   if(operacion=="suma")
   {
     idOp.value="+";
+    idx.value = X()*X(); 
+    idy.value =Y()*Y();
   }
   if(operacion=="resta")
   {
     idOp.value="-";
+    idx.value = X()*X(); 
+    idy.value =Y()*Y();
+
+    if(idx.value < idy.value)
+    {
+      var moment = idx.value;
+      idx.value =  idy.value;
+      idy.value = moment;
+    }
   }
+
   if(operacion=="multiplica")
   {
     idOp.value="*";
   }
+
   if(operacion=="divide")
   {
     idOp.value="/";
+    idy.value = Y();
+    idxy.value= X();
+    idx.value = idy.value * idxy.value;   
   }
   
-   idx.value = X();   
-   idy.value =Y();
    idxy.value = "";
    
 }
