@@ -305,10 +305,10 @@ function cargarPagina() {
   $("<link rel='stylesheet' href='/ccs/bootstrap.min.css' type='text/css'>").appendTo("head");
   $("<link rel='stylesheet' href='/ccs/estilobase.css' type='text/css'>").appendTo("head"); 
   $('<script />', { type : 'text/javascript', src : "/js/metodos.js"}).appendTo('head');   
-  $('<script />', { type : 'text/javascript', src : "/js/highcharts/highcharts.js"}).appendTo('head');   
-  $('<script />', { type : 'text/javascript', src : "/js/highcharts/exporting.js"}).appendTo('head'); 
-  $('<script />', { type : 'text/javascript', src : "/js/highcharts/export-data.js"}).appendTo('head'); 
-  $('<script />', { type : 'text/javascript', src : "/js/highcharts/accessibility.js"}).appendTo('head');
+  //$('<script />', { type : 'text/javascript', src : "/js/highcharts/highcharts.js"}).appendTo('head');   
+  //$('<script />', { type : 'text/javascript', src : "/js/highcharts/exporting.js"}).appendTo('head'); 
+  //$('<script />', { type : 'text/javascript', src : "/js/highcharts/export-data.js"}).appendTo('head'); 
+  //$('<script />', { type : 'text/javascript', src : "/js/highcharts/accessibility.js"}).appendTo('head');
    
 
 }
@@ -318,10 +318,10 @@ function cargarPagina1() {
   $("<link rel='stylesheet' href='ccs/estilo.css' type='text/css'>").appendTo("head");   
   $("<link rel='stylesheet' href='ccs/bootstrap.min.css' type='text/css'>").appendTo("head");
   $('<script />', { type : 'text/javascript', src : "/js/metodos.js"}).appendTo('head');   
-  $('<script />', { type : 'text/javascript', src : "js/highcharts/highcharts.js"}).appendTo('head');   
-  $('<script />', { type : 'text/javascript', src : "js/highcharts/exporting.js"}).appendTo('head'); 
-  $('<script />', { type : 'text/javascript', src : "js/highcharts/export-data.js"}).appendTo('head'); 
-  $('<script />', { type : 'text/javascript', src : "js/highcharts/accessibility.js"}).appendTo('head');  
+ // $('<script />', { type : 'text/javascript', src : "js/highcharts/highcharts.js"}).appendTo('head');   
+  //$('<script />', { type : 'text/javascript', src : "js/highcharts/exporting.js"}).appendTo('head'); 
+  //$('<script />', { type : 'text/javascript', src : "js/highcharts/export-data.js"}).appendTo('head'); 
+  //$('<script />', { type : 'text/javascript', src : "js/highcharts/accessibility.js"}).appendTo('head');  
   
 }
 
