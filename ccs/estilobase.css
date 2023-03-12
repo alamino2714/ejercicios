@@ -1,7 +1,8 @@
 *{
     border-radius: 8px;
 }
-body{
+body
+{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(12, 1fr);
@@ -11,7 +12,8 @@ body{
     font-size: 20px;
     font-weight: bold;
 }
-header{
+header
+{
     background-color: blue;
     grid-column: 1/-1;
     display: grid;
@@ -28,7 +30,9 @@ aside{
     background-color: gold;
     grid-row: 3/12;
     display: grid;
-    place-content: center;
+    place-content: center;  
+   
+    
 }
 section{
     background-color: orange;

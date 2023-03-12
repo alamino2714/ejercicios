@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ejercicios</title>
   <link rel="stylesheet" href="../ccs/estilo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
   <script src="../js/metodos.js"></script>
 </head>
 
@@ -48,14 +50,20 @@
         <input type="text" id="id-inputX1" class="id-calculos"  readonly />
         <input type="text" id="id-inputOP1" class="id-calculador" readonly>        
         <input type="text" id="id-inputY1" class="id-calculos"  readonly />
-        <input type="text" id="id-inputXY1" class="id-resultados"  />            
+        <input type="text" id="id-inputXY1" class="id-resultados"  />  
+        <input type="submit" id="id-inputAd1" class="id-calcular" value="+" onclick="NuevoCalculo()" /> 
+          
     </div>    
 </section>
 
 <section class="id-class-segundos" id="id-section-suma3">
-    <input type="submit" id="id-inputAd1" class="id-calcular" value="Adicionar" onclick="NuevoCalculo()" />
-    <input type="submit" id="id-inputAd2" class="id-calcular" value="Listo" onclick="Comprobar()" />
+
+    <input type="submit" id="id-inputAd2" class="id-calcular" value="Listo" onclick="Resultado()" />   
 </section>
+
+<footer>  
+    &copy; Mis Calculos
+</footer>
 
 </body>
 </html>

@@ -1,4 +1,6 @@
 //alert('Hola Yuniel1');
+
+
 function X() {
   var x = Math.round(Math.random() * 10);
   return x;
@@ -21,7 +23,6 @@ function Calcula(operacion) {
     var op1 = document.getElementById("id-inputOP1");
     var y1 = document.getElementById("id-inputY1");
     var xy1 = document.getElementById("id-inputXY1");
-    
     AsignarValor(x1, op1, y1, xy1, operacion);       
   
 }
@@ -34,11 +35,12 @@ function AsignarValor(idx, idOp, idy, idxy, operacion) {
     idx.value = X()*X(); 
     idy.value =Y()*Y();
   }
+
   if(operacion=="resta")
   {
     idOp.value="-";
     idx.value = X()*X(); 
-    idy.value =Y()*Y();
+    idy.value = Y()*Y();
 
     if(idx.value < idy.value)
     {
@@ -51,20 +53,28 @@ function AsignarValor(idx, idOp, idy, idxy, operacion) {
   if(operacion=="multiplica")
   {
     idOp.value="*";
+    idx.value = X();
+    idy.value =Y();
   }
 
   if(operacion=="divide")
   {
     idOp.value="/";
-    idy.value = Y();
-    idxy.value= X();
+    
+    idy.value = 0;
+    var y = 0;
+    while(y == 0)
+    {
+      y = Y();     
+    }
+    idy.value = y;
+    idxy.value= X()*X();
     idx.value = idy.value * idxy.value;   
   }
-  
+
    idxy.value = "";
    
 }
-
 
 function NuevoCalculo() {
 
@@ -79,12 +89,12 @@ function NuevoCalculo() {
     if (parseInt(x1.value) + parseInt(y1.value) == parseInt(xy1.value)) 
     {         
       AdicionarCampos(true, x1, op1, y1, xy1);            
-      AsignarValor(x1, op1, y1, xy1, op1.value);     
+      AsignarValor(x1, op1, y1, xy1, 'suma');     
     }
     else
     {    
       AdicionarCampos(false, x1, op1, y1, xy1);    
-      AsignarValor(x1, op1, y1, xy1, op1.value);   
+      AsignarValor(x1, op1, y1, xy1, 'suma');   
     }  
   }
 
@@ -93,12 +103,12 @@ function NuevoCalculo() {
     if (parseInt(x1.value) * parseInt(y1.value) == parseInt(xy1.value)) 
     {         
       AdicionarCampos(true, x1, op1, y1, xy1);            
-      AsignarValor(x1, op1, y1, xy1, op1.value);     
+      AsignarValor(x1, op1, y1, xy1, 'multiplica');     
     }
     else
     {    
       AdicionarCampos(false, x1, op1, y1, xy1);    
-      AsignarValor(x1, op1, y1, xy1, op1.value);   
+      AsignarValor(x1, op1, y1, xy1, 'multiplica');   
     }  
   }
 
@@ -107,26 +117,27 @@ function NuevoCalculo() {
     if (parseInt(x1.value) - parseInt(y1.value) == parseInt(xy1.value)) 
     {         
       AdicionarCampos(true, x1, op1, y1, xy1);            
-      AsignarValor(x1, op1, y1, xy1, op1.value);     
+      AsignarValor(x1, op1, y1, xy1, 'resta');     
     }
     else
     {    
       AdicionarCampos(false, x1, op1, y1, xy1);    
-      AsignarValor(x1, op1, y1, xy1, op1.value);   
+      AsignarValor(x1, op1, y1, xy1, 'resta');   
     }  
   }
 
   if(op1.value =='/')
   {   
     if (parseInt(x1.value) / parseInt(y1.value) == parseInt(xy1.value)) 
-    {         
+    {  
+             
       AdicionarCampos(true, x1, op1, y1, xy1);            
-      AsignarValor(x1, op1, y1, xy1, op1.value);     
+      AsignarValor(x1, op1, y1, xy1, 'divide');     
     }
     else
     {    
       AdicionarCampos(false, x1, op1, y1, xy1);    
-      AsignarValor(x1, op1, y1, xy1, op1.value);   
+      AsignarValor(x1, op1, y1, xy1, 'divide');   
     }  
   }
 
@@ -134,6 +145,7 @@ function NuevoCalculo() {
 
 function AdicionarCampos(listo, x1p, op1p, y1p, xy1p) {
 
+  
   var idSection = document.getElementById("id-section-suma2-1").parentNode;
   var iddivI = document.getElementById("id-section-suma2-1");
 
@@ -152,6 +164,8 @@ function AdicionarCampos(listo, x1p, op1p, y1p, xy1p) {
   inputTextY.className = "id-calculos";
   inputTextX.className = "id-calculos";
   inputTextOP.className = "id-calculador";
+  inputTextXY.className = "id-resultados";
+  
 
   inputTextX.value = x1p.value;
   inputTextOP.value = op1p.value;
@@ -175,6 +189,15 @@ function AdicionarCampos(listo, x1p, op1p, y1p, xy1p) {
   iddiv.appendChild(inputTextOP);
   iddiv.appendChild(inputTextY);
   iddiv.appendChild(inputTextXY);
+
+ 
+
+}
+
+function Resultado ()
+{
+  var Resultado = document.getElementsByClassName('id-resultados');
+  alert(Resultado.length);
 }
 
 
